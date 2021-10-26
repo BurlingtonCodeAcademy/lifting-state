@@ -1,6 +1,6 @@
 import React from "react";
 
-class Calculator extends React.Component {
+class TempInput extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -19,4 +19,4 @@ class Calculator extends React.Component {
   }
 }
 
-export default Calculator;
+export default TempInput;
