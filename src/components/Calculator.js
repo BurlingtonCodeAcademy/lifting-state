@@ -1,23 +1,22 @@
-import React from 'react'
+import React from "react";
 
-class Calculator extends  React.Component{
-
-  setTemp = (evt) => {
-    let tempType = this.props.type
-
-    this.props.stateUpdater({
-      temperature: evt.target.value,
-      scale: tempType[0]
-    })
+class Calculator extends React.Component {
+  constructor(props) {
+    super(props);
   }
+
+  handleChange = (evt) => {
+    this.props.onTemperatureChange(evt.target.value);
+  };
 
   render() {
     return (
-      <form>
-        <label>Please enter temperature in {this.props.type}<input value={this.props.temperature} type="number" onChange={this.setTemp} /></label>
-      </form>
-    )
+      <fieldset>
+        <legend>Enter temperature in {this.props.scale}:</legend>
+        <input value={this.props.temperature} onChange={this.handleChange} />
+      </fieldset>
+    );
   }
 }
 
-export default Calculator
+export default Calculator;
